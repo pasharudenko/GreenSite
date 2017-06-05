@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.25, created on 2017-06-03 20:21:34
+<?php /* Smarty version 3.1.25, created on 2017-06-05 20:09:54
          compiled from "D:\OpenServer\domains\GreenSite\admin\templates\out.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:308635932f01ea34356_35017888%%*/
+/*%%SmartyHeaderCode:30771593590620d3992_20722144%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5a79b5fa2598a246cd8dcfbecbe62bd09e149011' => 
     array (
       0 => 'D:\\OpenServer\\domains\\GreenSite\\admin\\templates\\out.tpl',
-      1 => 1476200868,
+      1 => 1496682593,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '308635932f01ea34356_35017888',
+  'nocache_hash' => '30771593590620d3992_20722144',
   'variables' => 
   array (
-    'items' => 0,
+    'order_array' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.25',
-  'unifunc' => 'content_5932f01ea7a394_50311170',
+  'unifunc' => 'content_593590621381f8_49888036',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5932f01ea7a394_50311170')) {
-function content_5932f01ea7a394_50311170 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_593590621381f8_49888036')) {
+function content_593590621381f8_49888036 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '308635932f01ea34356_35017888';
+$_smarty_tpl->properties['nocache_hash'] = '30771593590620d3992_20722144';
 ?>
 <!-- Content Start -->
 	<div class="content">
@@ -58,7 +58,7 @@ $_smarty_tpl->properties['nocache_hash'] = '308635932f01ea34356_35017888';
                                         	<th>Сообщение</th>
 										<!-- <th>Описание</th> -->
 										<th>Дата</th>
-										<th>Редактировать</th>
+
 										<th>Удалить</th>
 										
 									</thead>
@@ -66,7 +66,7 @@ $_smarty_tpl->properties['nocache_hash'] = '308635932f01ea34356_35017888';
 
 									<!-- Table Row Start -->
 							         <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['i'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
-$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['items']->value) ? count($_loop) : max(0, (int) $_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['order_array']->value) ? count($_loop) : max(0, (int) $_loop); unset($_loop);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['name'] = 'i';
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['show'] = true;
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'];
@@ -92,34 +92,29 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 									<tr>
 										<!-- <td><input type="checkbox" name="select-example" class="icheck-blue" /></td> -->
 										<td>
-											<p><?php echo $_smarty_tpl->tpl_vars['items']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['name'];?>
+											<p><?php echo $_smarty_tpl->tpl_vars['order_array']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['name'];?>
 </p>
 										</td>
 										<td>
-											<p><?php echo $_smarty_tpl->tpl_vars['items']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['number'];?>
+											<p><?php echo $_smarty_tpl->tpl_vars['order_array']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['number'];?>
 </p>
 										</td>
                                         	<td>
-											<p><?php echo $_smarty_tpl->tpl_vars['items']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['email'];?>
+											<p><?php echo $_smarty_tpl->tpl_vars['order_array']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['email'];?>
 </p>
 										</td>
 										<td>
 											<p>
-											<?php echo $_smarty_tpl->tpl_vars['items']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['message'];?>
+											<?php echo $_smarty_tpl->tpl_vars['order_array']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['message'];?>
 
 											</p>
 										</td>
 									
 										<td>date</td>
 
+
 										<td class="actions">
-											<a href="edit_out.php?id=<?php echo $_smarty_tpl->tpl_vars['items']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['id'];?>
-"><i class="fa fa-file-text-o"></i></a>
-										</td>
-										<td class="actions">
-											<a href="delete_out.php?id=<?php echo $_smarty_tpl->tpl_vars['items']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['id'];?>
-&name=<?php echo $_smarty_tpl->tpl_vars['items']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['name'];?>
-"><i class="fa fa-trash-o"></i></a>
+											<a href="delete_order.php"><i class="fa fa-trash-o"></i></a>
 										</td>
 									</tr>
 							<?php endfor; endif; ?>

@@ -8,12 +8,10 @@
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>{$meta_title}</title>
+    <meta name="meta_description" content="{$meta_description}"/>
+    <meta name="meta_key_words" content="{$meta_key_words}"/>
 
-    <title>BASICA! A Free Bootstrap3 HTML5 CSS3 Template by Vactual Art</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -53,25 +51,15 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about-us.php">About Us</a></li>
-                <li class="active"><a href="services.php">Services</a></li>
-                <li><a href="portfolio.php">Portfolio</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="full-width.php">Full Width Page</a></li>
-                        <li><a href="#">Dropdown Menu 1</a></li>
-                        <li><a href="#">Dropdown Menu 2</a></li>
-                        <li><a href="#">Dropdown Menu 3</a></li>
-                        <li><a href="#">Dropdown Menu 4</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                    </ul>
-                </li>
-                <li><a href="blog.php">Blog</a></li>
-                <li><a href="contact-us.php">Contact</a></li>
+                {section loop=$array_meta name=i}
+                <li {if $array_meta[i].page=="services"}class="active"{/if}><a href="{$array_meta[i].page}.php">{$array_meta[i].name}</a></li>{/section}
+
+
+                <a href="{$script}?lang=eng"><img src="img/eng.jpg" width="100px"></a>&nbsp&nbsp&nbsp
+
+                <a href="{$script}?lang=ru"><img src="img/rus1.jpg" width="100px"></a>
+
+
             </ul>
         </div>
     </div>

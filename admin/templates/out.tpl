@@ -28,38 +28,36 @@
                                         	<th>Сообщение</th>
 										<!-- <th>Описание</th> -->
 										<th>Дата</th>
-										<th>Редактировать</th>
+
 										<th>Удалить</th>
 										
 									</thead>
 									<tbody>
 
 									<!-- Table Row Start -->
-							         {section loop=$items name=i}
+							         {section loop=$order_array name=i}
 									<tr>
 										<!-- <td><input type="checkbox" name="select-example" class="icheck-blue" /></td> -->
 										<td>
-											<p>{$items[i].name}</p>
+											<p>{$order_array[i].name}</p>
 										</td>
 										<td>
-											<p>{$items[i].number}</p>
+											<p>{$order_array[i].number}</p>
 										</td>
                                         	<td>
-											<p>{$items[i].email}</p>
+											<p>{$order_array[i].email}</p>
 										</td>
 										<td>
 											<p>
-											{$items[i].message}
+											{$order_array[i].message}
 											</p>
 										</td>
 									
 										<td>date</td>
 
+
 										<td class="actions">
-											<a href="edit_out.php?id={$items[i].id}"><i class="fa fa-file-text-o"></i></a>
-										</td>
-										<td class="actions">
-											<a href="delete_out.php?id={$items[i].id}&name={$items[i].name}"><i class="fa fa-trash-o"></i></a>
+											<a href="delete_order.php"><i class="fa fa-trash-o"></i></a>
 										</td>
 									</tr>
 							{/section}

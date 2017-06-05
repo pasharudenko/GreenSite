@@ -1,7 +1,6 @@
 <?php
 require_once ('header.php');
-$smarty_services=new Smarty();
-
+$smarty_contact=new Smarty();
 
 
 
@@ -18,15 +17,15 @@ while($next=mysqli_fetch_array($result))
     $array_meta[]=array("name"=>$next["name_$lang"],"page"=>$next['page']);
 
 }
-$smarty_services->assign("array_meta",$array_meta);
+$smarty_contact->assign("array_meta",$array_meta);
 ///////////////////////////////////
-$query_meta="select meta_title_$lang,meta_description_$lang,meta_key_words_$lang from meta_setting WHERE page='services'";
+$query_meta="select meta_title_$lang,meta_description_$lang,meta_key_words_$lang from meta_setting WHERE page='contact_us'";
 $result_meta=mysqli_query($dbc,$query_meta) or die('error2');
 $next_meta=mysqli_fetch_array($result_meta);
 $meta_title=$next_meta["meta_title_$lang"];
 $meta_description=$next_meta["meta_title_$lang"];
 $meta_key_words=$next_meta["meta_title_$lang"];
-$smarty_services->assign("meta_title",$meta_title);
+$smarty_contact->assign("meta_title",$meta_title);
 //////////////////////////////////
 
 
@@ -38,5 +37,7 @@ $smarty_services->assign("meta_title",$meta_title);
 
 
 
-$smarty_services->display("services.tpl");
+
+
+$smarty_contact->display("contact-us.tpl");
 ?>

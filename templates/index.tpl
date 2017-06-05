@@ -57,33 +57,17 @@
             <a class="brand" href="index.php"><img src="img/Logo_Text.png" alt="Basica" width="250px"></a>
         </div>
         <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="index.php">{#test#}</a></li>
-                <li><a href="about-us.php">О нас</a></li>
-                <li><a href="services.php">Услуги</a></li>
-                <li><a href="portfolio.php">Портфолио</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Dropdown Menu 1</a></li>
-                        <li><a href="#">Dropdown Menu 2</a></li>
-                        <li><a href="#">Dropdown Menu 3</a></li>
-                        <li><a href="#">Dropdown Menu 4</a></li>
-                        <li><a href="#">Dropdown Menu 5</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                    </ul>
-                </li>
-                <li><a href="blog.php">Блог</a></li>
-                <li><a href="contact-us.php">Контакты</a></li>
-
-                <a href="{$script}?lang=eng"><img src="img/eng.jpg" width="100px"></a>&nbsp&nbsp&nbsp
-
-                <a href="{$script}?lang=ru"><img src="img/rus1.jpg" width="100px"></a>
+                <ul class="nav navbar-nav navbar-right">
+                    {section loop=$array_meta name=i}
+                    <li {if $array_meta[i].page=="index"}class="active"{/if}><a href="{$array_meta[i].page}.php">{$array_meta[i].name}</a></li>{/section}
 
 
-            </ul>
+                    <a href="{$script}?lang=eng"><img src="img/eng.jpg" width="100px"></a>&nbsp&nbsp&nbsp
+
+                    <a href="{$script}?lang=ru"><img src="img/rus1.jpg" width="100px"></a>
+
+
+                </ul>
         </div>
     </div>
 </header><!--/header-->
